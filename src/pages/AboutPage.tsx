@@ -57,17 +57,17 @@ const AboutPage = () => {
             </div>
             <div className="bg-card border border-border rounded-2xl p-10 space-y-8">
               <div>
-                <div className="heading-lg text-gradient-gold">50+</div>
+                <div className="heading-lg text-gradient-gold">10+</div>
                 <div className="text-muted-foreground text-sm">Projects Delivered</div>
               </div>
               <div className="border-t border-border" />
               <div>
-                <div className="heading-lg text-gradient-gold">30+</div>
+                <div className="heading-lg text-gradient-gold">12+</div>
                 <div className="text-muted-foreground text-sm">Global Clients</div>
               </div>
               <div className="border-t border-border" />
               <div>
-                <div className="heading-lg text-gradient-gold">6+</div>
+                <div className="heading-lg text-gradient-gold">3+</div>
                 <div className="text-muted-foreground text-sm">Industries Served</div>
               </div>
             </div>
