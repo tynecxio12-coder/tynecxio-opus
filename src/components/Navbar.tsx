@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,10 +12,17 @@ const navLinks = [
   { label: "Contact", path: "/contact" },
 ];
 
+const scrollToPageTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,6 +31,19 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => setMobileOpen(false), [location]);
+
+  const handleNavClick = (path: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    setMobileOpen(false);
+
+    if (location.pathname !== path) {
+      navigate(path);
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToPageTop);
+    });
+  };
 
   return (
     <motion.nav
@@ -35,17 +55,17 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20 section-padding">
-        <Link to="/" className="font-display text-xl font-bold tracking-tight">
+        <Link to="/" onClick={handleNavClick("/")} className="font-display text-xl font-bold tracking-tight">
           <span className="text-foreground">Tynec</span>
           <span className="text-gradient-gold">Xio</span>
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
+              onClick={handleNavClick(link.path)}
               className={`text-sm font-medium transition-colors duration-200 ${
                 location.pathname === link.path
                   ? "text-primary"
@@ -55,23 +75,22 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact">
+          <Link to="/contact" onClick={handleNavClick("/contact")}>
             <Button variant="hero" size="default">
               Book a Call
             </Button>
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -85,6 +104,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
+                  onClick={handleNavClick(link.path)}
                   className={`text-base font-medium transition-colors ${
                     location.pathname === link.path ? "text-primary" : "text-muted-foreground"
                   }`}
@@ -92,8 +112,8 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/contact">
-                <Button variant="hero" className="w-full mt-2">
+              <Link to="/contact" onClick={handleNavClick("/contact")}>
+                <Button variant="hero" className="mt-2 w-full">
                   Book a Call
                 </Button>
               </Link>
