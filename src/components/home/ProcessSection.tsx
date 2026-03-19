@@ -26,7 +26,7 @@ const ProcessSection = () => (
             transition={{ delay: i * 0.15 }}
             className="relative"
           >
-            <div className="text-5xl font-display font-bold text-primary/10 mb-4">{step.num}</div>
+            <div className="text-5xl font-display font-bold text-primary mb-4">{step.num}</div>
             <h3 className="font-display font-semibold text-lg mb-2">{step.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
             {i < processSteps.length - 1 && (

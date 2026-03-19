@@ -16,8 +16,8 @@ import FaqSection from "@/components/home/FaqSection";
 import FocusAreasSection from "@/components/home/FocusAreasSection";
 
 const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "30+", label: "Global Clients" },
+  { value: "10+", label: "Projects Delivered" },
+  { value: "12+", label: "Global Clients" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "4.9", label: "Avg. Rating" },
 ];

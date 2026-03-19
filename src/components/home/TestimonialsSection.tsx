@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 
 const testimonials = [
-  { name: "Alex M.", role: "Founder, SaaS Startup", text: "TynecXio transformed our vision into a product that our investors couldn't stop talking about. Premium quality, fast delivery." },
-  { name: "Sarah K.", role: "CEO, E-Commerce Brand", text: "The design quality is world-class. Our conversion rate increased by 40% after the redesign. Absolutely worth every penny." },
-  { name: "James L.", role: "CTO, Fintech", text: "Working with TynecXio felt like having a senior design team embedded in our company. Clear communication, exceptional results." },
+  { name: "Dr. Tonni", role: "Founder, SaaS Startup", text: "TynecXio transformed our vision into a product that our investors couldn't stop talking about. Premium quality, fast delivery." },
+  { name: "Mr. Shahabuddin", role: "CEO, E-Commerce Brand", text: "The design quality is world-class. Our conversion rate increased by 40% after the redesign. Absolutely worth every penny." },
+  { name: "Mr. Andruino Fonex", role: "CTO, Fintech", text: "Working with TynecXio felt like having a senior design team embedded in our company. Clear communication, exceptional results." },
 ];
 
 const TestimonialsSection = () => (

@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/tynecxio-logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
   { label: "Pricing", path: "/pricing" },
-  { label: "Portfolio", path: "/portfolio" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
@@ -56,9 +56,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20 section-padding">
-        <Link to="/" onClick={handleNavClick("/")} className="font-display text-xl font-bold tracking-tight">
-          <span className="text-foreground">Tynec</span>
-          <span className="text-gradient-gold">Xio</span>
+        <Link to="/" onClick={handleNavClick("/")} className="flex items-center gap-2">
+          <img src={logo} alt="TynecXio Logo" className="h-10 w-10 object-contain" />
+          <span className="font-display text-xl font-bold tracking-tight">
+            <span className="text-foreground">Tynec</span>
+            <span className="text-gradient-gold">Xio</span>
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

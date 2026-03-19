@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
 import PricingPage from "@/pages/PricingPage";
-import PortfolioPage from "@/pages/PortfolioPage";
+
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
@@ -28,7 +28,7 @@ const App = () => (
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
+          
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
