@@ -252,7 +252,7 @@ const ContactPage = () => {
               <Mail size={22} className="text-primary mb-3" />
               <h4 className="font-display font-semibold text-sm mb-1">Email Us</h4>
               <a
-                href="mailto:hello@tynecxio.com"
+                href="mailto:career@tynecxio.com"
                 className="text-muted-foreground text-sm hover:text-primary transition-colors"
               >
                 hello@tynecxio.com
