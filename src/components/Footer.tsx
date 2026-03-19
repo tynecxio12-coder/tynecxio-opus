@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="TynecXio Logo" className="h-20 w-20 object-contain" />
+              <img src={logo} alt="TynecXio Logo" className="h-28 w-28 object-contain" />
               <span className="font-display text-xl font-bold tracking-tight">
                 <span className="text-foreground">Tynec</span>
                 <span className="text-gradient-gold">Xio</span>
