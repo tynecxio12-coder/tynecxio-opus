@@ -57,7 +57,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20 section-padding">
         <Link to="/" onClick={handleNavClick("/")} className="flex items-center gap-2">
-          <img src={logo} alt="TynecXio Logo" className="h-14 w-14 object-contain" />
+          <img src={logo} alt="TynecXio Logo" className="h-20 w-20 object-contain" />
           <span className="font-display text-xl font-bold tracking-tight">
             <span className="text-foreground">Tynec</span>
             <span className="text-gradient-gold">Xio</span>
